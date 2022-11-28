@@ -137,7 +137,7 @@
 - model: scanEngine.enginetype
   pk: 6
   fields:
-    engine_name: reNgine Recommended
+    engine_name: reconPoint Recommended
     subdomain_discovery: true
     waf_detection: true
     dir_file_fuzz: true

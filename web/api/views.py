@@ -25,7 +25,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view, action
 from rest_framework import generics
 
-from reNgine.common_func import *
+from reconPoint.common_func import *
 
 from .serializers import *
 from scanEngine.models import *
@@ -34,10 +34,10 @@ from dashboard.models import *
 from targetApp.models import *
 from recon_note.models import *
 
-from reNgine.utilities import is_safe_path
-from reNgine.tasks import run_system_commands, initiate_subtask, create_scan_activity
+from reconPoint.utilities import is_safe_path
+from reconPoint.tasks import run_system_commands, initiate_subtask, create_scan_activity
 from packaging import version
-from reNgine.celery import app
+from reconPoint.celery import app
 from django.utils import timezone
 
 
@@ -668,7 +668,7 @@ class RengineUpdateCheck(APIView):
 	def get(self, request):
 		req = self.request
 		github_api = \
-			'https://api.github.com/repos/yogeshojha/rengine/releases'
+			'https://api.github.com/repos/yogeshojha/reconpoint/releases'
 		response = requests.get(github_api).json()
 		if 'message' in response:
 			return Response({'status': False, 'message': 'RateLimited'})

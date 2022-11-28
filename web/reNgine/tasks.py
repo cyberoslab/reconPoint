@@ -20,7 +20,7 @@ from emailfinder.extractor import *
 from dotted_dict import DottedDict
 from celery import shared_task
 from discord_webhook import DiscordWebhook
-from reNgine.celery import app
+from reconPoint.celery import app
 from startScan.models import *
 from targetApp.models import Domain
 from scanEngine.models import EngineType
@@ -36,8 +36,8 @@ from django.utils import timezone, dateformat
 from django.shortcuts import get_object_or_404
 from django.core.exceptions import ObjectDoesNotExist
 
-from reNgine.celery import app
-from reNgine.definitions import *
+from reconPoint.celery import app
+from reconPoint.definitions import *
 
 from startScan.models import *
 from targetApp.models import Domain
@@ -230,7 +230,7 @@ def initiate_scan(
 	notification = Notification.objects.all()
 
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine has initiated recon for target {} with engine type {}'.format(domain.name, engine_object.engine_name))
+		send_notification('reconPoint has initiated recon for target {} with engine type {}'.format(domain.name, engine_object.engine_name))
 
 	try:
 		current_scan_dir = domain.name + '_' + str(random.randint(100000000000, 999999999999))
@@ -411,7 +411,7 @@ def initiate_scan(
 
 	activity_id = create_scan_activity(task, "Scan Completed", 2)
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('*Scan Completed*\nreNgine has finished performing recon on target {}.'.format(domain.name))
+		send_notification('*Scan Completed*\nreconPoint has finished performing recon on target {}.'.format(domain.name))
 
 	'''
 	Once the scan is completed, save the status to successful
@@ -923,7 +923,7 @@ def grab_screenshot(task, domain, yaml_configuration, results_dir, activity_id):
 	'''
 	notification = Notification.objects.all()
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine is currently gathering screenshots for {}'.format(domain.name))
+		send_notification('reconPoint is currently gathering screenshots for {}'.format(domain.name))
 
 	output_screenshots_path = results_dir + '/screenshots'
 	result_csv_path = results_dir + '/screenshots/Requests.csv'
@@ -982,7 +982,7 @@ def grab_screenshot(task, domain, yaml_configuration, results_dir, activity_id):
 	))
 
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine has finished gathering screenshots for {}'.format(domain.name))
+		send_notification('reconPoint has finished gathering screenshots for {}'.format(domain.name))
 
 
 def port_scanning(
@@ -1121,7 +1121,7 @@ def port_scanning(
 			ports__in=IpAddress.objects.filter(
 				ip_addresses__in=Subdomain.objects.filter(
 					scan_history__id=scan_history.id))).distinct().count()
-		send_notification('reNgine has finished Port Scanning on {} and has identified {} ports.'.format(domain_name, port_count))
+		send_notification('reconPoint has finished Port Scanning on {} and has identified {} ports.'.format(domain_name, port_count))
 
 	if notification and notification[0].send_scan_output_file:
 		send_files_to_discord(results_dir + '/ports.json')
@@ -1421,7 +1421,7 @@ def fetch_endpoints(
 	'''
 		This function is responsible for fetching all the urls associated with target
 		and runs HTTP probe
-		reNgine has ability to fetch deep urls, meaning url for all the subdomains
+		reconPoint has ability to fetch deep urls, meaning url for all the subdomains
 		but, when subdomain is given, subtask is running, deep or normal scan should
 		not work, it should simply fetch urls for that subdomain
 	'''
@@ -1437,7 +1437,7 @@ def fetch_endpoints(
 
 	notification = Notification.objects.all()
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine is currently gathering endpoints for {}.'.format(domain_name))
+		send_notification('reconPoint is currently gathering endpoints for {}.'.format(domain_name))
 
 	# check yaml settings
 	if ALL in yaml_configuration[FETCH_URL][USES_TOOLS]:
@@ -1689,7 +1689,7 @@ def fetch_endpoints(
 			scan_history__id=scan_history.id).values('http_url').distinct().count()
 		endpoint_alive_count = EndPoint.objects.filter(
 				scan_history__id=scan_history.id, http_status__exact=200).values('http_url').distinct().count()
-		send_notification('reNgine has finished gathering endpoints for {} and has discovered *{}* unique endpoints.\n\n{} of those endpoints reported HTTP status 200.'.format(
+		send_notification('reconPoint has finished gathering endpoints for {} and has discovered *{}* unique endpoints.\n\n{} of those endpoints reported HTTP status 200.'.format(
 			domain_name,
 			endpoint_count,
 			endpoint_alive_count
@@ -2171,7 +2171,7 @@ def save_endpoint(endpoint_dict):
 def perform_osint(scan_history, domain, yaml_configuration, results_dir):
 	notification = Notification.objects.all()
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine has initiated OSINT on target {}'.format(domain.name))
+		send_notification('reconPoint has initiated OSINT on target {}'.format(domain.name))
 
 	if 'discover' in yaml_configuration[OSINT]:
 		osint_discovery(scan_history, domain, yaml_configuration, results_dir)
@@ -2180,7 +2180,7 @@ def perform_osint(scan_history, domain, yaml_configuration, results_dir):
 		dorking(scan_history, yaml_configuration)
 
 	if notification and notification[0].send_scan_status_notif:
-		send_notification('reNgine has completed performing OSINT on target {}'.format(domain.name))
+		send_notification('reconPoint has completed performing OSINT on target {}'.format(domain.name))
 
 
 def osint_discovery(scan_history, domain, yaml_configuration, results_dir):

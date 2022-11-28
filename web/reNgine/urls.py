@@ -12,9 +12,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="reNgine API",
+      title="reconPoint API",
       default_version='v1',
-      description="reNgine: An Automated reconnaissance framework.",
+      description="reconPoint: An Automated reconnaissance framework.",
       contact=openapi.Contact(email="yogesh.ojha11@gmail.com"),
    ),
    public=True,

@@ -22,8 +22,8 @@ from django.db.models import Q
 from scanEngine.models import *
 from startScan.models import *
 from targetApp.models import *
-from reNgine.definitions import *
-from reNgine.common_serializers import *
+from reconPoint.definitions import *
+from reconPoint.common_serializers import *
 
 def get_lookup_keywords():
     default_lookup_keywords = [

@@ -21,7 +21,7 @@ echo " "
 tput setaf 3;
 echo "#########################################################################"
 echo "Please note that, this installation script is only intended for Linux"
-echo "For Mac and Windows, refer to the official guide https://rengine.wiki"
+echo "For Mac and Windows, refer to the official guide https://reconpoint.wiki"
 echo "#########################################################################"
 
 echo " "

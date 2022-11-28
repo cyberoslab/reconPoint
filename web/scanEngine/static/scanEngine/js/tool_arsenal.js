@@ -4,7 +4,7 @@ function get_external_tool_latest_version(tool_id, tool_name){
   if (current_version === 'Invalid version lookup command.' || current_version === 'Version Lookup command not provided.'){
     Swal.fire({
       title: 'Unable to fetch latest version!',
-      text: `Since the version lookup command is invalid, reNgine is not able to detect if there's a newer version. But you can still force download the latest version.`,
+      text: `Since the version lookup command is invalid, reconPoint is not able to detect if there's a newer version. But you can still force download the latest version.`,
       icon: 'info',
       confirmButtonText: 'Update ' +  htmlEncode(tool_name)
     }).then((result) => {
@@ -140,7 +140,7 @@ function get_external_tool_latest_version(tool_id, tool_name){
         if (current_version === 'Invalid version lookup command.' || current_version === 'Version Lookup command not provided.'){
           Swal.fire({
             title: 'Unable to fetch latest version!',
-            text: `Since the version lookup command is invalid, reNgine is not able to detect if there's a newer version. But you can still force download the latest version. The latest version is ${latest_version}.`,
+            text: `Since the version lookup command is invalid, reconPoint is not able to detect if there's a newer version. But you can still force download the latest version. The latest version is ${latest_version}.`,
             icon: 'info',
             confirmButtonText: 'Update ' +  htmlEncode(tool_name)
           }).then((result) => {

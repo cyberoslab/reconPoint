@@ -12,7 +12,7 @@ then
 fi
 
 echo "Waiting for Celery to start"
-while ! celery -A reNgine status; do
+while ! celery -A reconPoint status; do
   sleep 0.5
 done
 

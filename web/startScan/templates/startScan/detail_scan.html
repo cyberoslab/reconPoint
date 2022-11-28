@@ -300,7 +300,7 @@ Scan Findings
 					<div class="col-xl-3 col-lg-3 col-6">
 						<div class="card" id="tooltip-container">
 							<div class="card-body">
-								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Subdomains Discovered by reNgine during this scan"></i>
+								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Subdomains Discovered by reconPoint during this scan"></i>
 								<h4 class="mt-0 font-16">Subdomains Discovered</h4>
 								<h2 class="text-primary my-3 text-center"><span data-plugin="counterup">{{subdomain_count|intcomma}}</span></h2>
 								<br>
@@ -312,7 +312,7 @@ Scan Findings
 					<div class="col-xl-3 col-lg-3 col-6">
 						<div class="card" id="tooltip-container1">
 							<div class="card-body">
-								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Endpoints discovered by reNgine during this scan. This includes any URLs discovered."></i>
+								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Endpoints discovered by reconPoint during this scan. This includes any URLs discovered."></i>
 								<h4 class="mt-0 font-16">Endpoints Discovered</h4>
 								<h2 class="text-primary my-3 text-center"><span data-plugin="counterup">{{endpoint_count|intcomma}}</span></h2>
 								<br>
@@ -324,7 +324,7 @@ Scan Findings
 					<div class="col-xl-3 col-lg-3 col-6">
 						<div class="card" id="tooltip-container2">
 							<div class="card-body">
-								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Vulnerabilities discovered by reNgine. This will be populated only if vulnerability scan is performed during this scan."></i>
+								<i class="fa fa-info-circle text-muted float-end" data-bs-container="#tooltip-container2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Total Vulnerabilities discovered by reconPoint. This will be populated only if vulnerability scan is performed during this scan."></i>
 								<h4 class="mt-0 font-16">Vulnerabilities Discovered</h4>
 								<h2 class="text-danger my-3 text-center"><span data-plugin="counterup">{{total_vulnerability_count|intcomma}}</span></h2>
 								{% if history.vulnerability_scan %}
@@ -364,7 +364,7 @@ Scan Findings
 					<div class="col-6 interesting-tab-show" style="display: none">
 						<div class="alert alert-warning alert-dismissible fade show" role="alert">
 							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-							<i class="mdi mdi-fire-alert me-2"></i> reNgine identified <span id="interesting_subdomain_alert_count"></span> <span id="interesting_endpoint_alert_count"></span> <a class="" id="interesting-tab-btn" href="#">Check it out!</a>
+							<i class="mdi mdi-fire-alert me-2"></i> reconPoint identified <span id="interesting_subdomain_alert_count"></span> <span id="interesting_endpoint_alert_count"></span> <a class="" id="interesting-tab-btn" href="#">Check it out!</a>
 						</div>
 					</div>
 					<div class="col-6 recon-changes-tab-show" style="display: none">
@@ -377,7 +377,7 @@ Scan Findings
 					<div class="col-6 related-domains-tab-show">
 						<div class="alert alert-warning alert-dismissible fade show" role="alert">
 							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-							<i class="fe-trending-up me-2"></i> reNgine identified {{history.domain.domain_info.associated_domains.count}} domains related to {{history.domain}}. <a href="#" onclick="$('#v-pills-tab a:last').prev().tab('show');">Check it out!</a>
+							<i class="fe-trending-up me-2"></i> reconPoint identified {{history.domain.domain_info.associated_domains.count}} domains related to {{history.domain}}. <a href="#" onclick="$('#v-pills-tab a:last').prev().tab('show');">Check it out!</a>
 						</div>
 					</div>
 					{% endif %}

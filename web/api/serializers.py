@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from startScan.models import *
-from reNgine.common_func import *
+from reconPoint.common_func import *
 from targetApp.models import *
 from scanEngine.models import *
 from dashboard.models import *

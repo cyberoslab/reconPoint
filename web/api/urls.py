@@ -171,7 +171,7 @@ urlpatterns = [
         UninstallTool.as_view(),
         name='uninstall_tool'),
     path(
-        'rengine/update/',
+        'reconpoint/update/',
         RengineUpdateCheck.as_view(),
         name='check_rengine_update'),
     path(

@@ -4,9 +4,9 @@ import os
 import sys
 
 def main():
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'reNgine.settings')
-    # show rengine artwork
-    f = open('art/reNgine.txt', 'r')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'reconPoint.settings')
+    # show reconpoint artwork
+    f = open('art/reconPoint.txt', 'r')
     file_contents = f.read()
     print (file_contents)
     f.close()

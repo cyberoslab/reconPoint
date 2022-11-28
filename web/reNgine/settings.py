@@ -1,10 +1,10 @@
 import os
-from reNgine.init import first_run
+from reconPoint.init import first_run
 from celery.schedules import crontab
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-#       RENGINE CONFIGURATIONS
+#       reconpoint CONFIGURATIONS
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 RENGINE_HOME = '/usr/src/app'
@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'reNgine.urls'
+ROOT_URLCONF = 'reconPoint.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'reNgine.wsgi.application'
+WSGI_APPLICATION = 'reconPoint.wsgi.application'
 
 
 # REST Framework

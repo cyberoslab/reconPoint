@@ -485,7 +485,7 @@ function get_interesting_subdomains(target_id, scan_history_id) {
 				// </div>
 				// <div id="cardCollpase4" class="collapse show">
 				// <div class="card-body">
-				// reNgine could not identify any interesting subdomains. You can customize interesting subdomain keywords <a href="/scanEngine/interesting/lookup/">from here</a> and this section would be automatically updated.
+				// reconPoint could not identify any interesting subdomains. You can customize interesting subdomain keywords <a href="/scanEngine/interesting/lookup/">from here</a> and this section would be automatically updated.
 				// </div>
 				// </div>`);
 			} else {
@@ -1457,7 +1457,7 @@ function get_target_whois(domain_name) {
 				} else {
 					Swal.fire({
 						title: 'Oops!',
-						text: `reNgine could not fetch WHOIS records for ${domain_name}!`,
+						text: `reconPoint could not fetch WHOIS records for ${domain_name}!`,
 						icon: 'error'
 					});
 				}
@@ -1489,7 +1489,7 @@ function get_domain_whois(domain_name, show_add_target_btn=false) {
 		} else {
 			Swal.fire({
 				title: 'Oops!',
-				text: `reNgine could not fetch WHOIS records for ${domain_name}! ${response['message']}`,
+				text: `reconPoint could not fetch WHOIS records for ${domain_name}! ${response['message']}`,
 				icon: 'error'
 			});
 		}
@@ -2421,7 +2421,7 @@ function get_most_vulnerable_target(scan_id=null, target_id=null, ignore_info=fa
 				<div class="mt-4 alert alert-warning">
 				Could not find most vulnerable targets.
 				</br>
-				Once the vulnerability scan is performed, reNgine will identify the most vulnerable targets.</div>
+				Once the vulnerability scan is performed, reconPoint will identify the most vulnerable targets.</div>
 			`);
 		}
 	});
@@ -2513,7 +2513,7 @@ function get_most_common_vulnerability(scan_id=null, target_id=null, ignore_info
 				<div class="mt-4 alert alert-warning">
 				Could not find Most Common Vulnerabilities.
 				</br>
-				Once the vulnerability scan is performed, reNgine will identify the Most Common Vulnerabilities.</div>
+				Once the vulnerability scan is performed, reconPoint will identify the Most Common Vulnerabilities.</div>
 			`);
 		}
 	});
