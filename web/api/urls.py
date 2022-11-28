@@ -172,8 +172,8 @@ urlpatterns = [
         name='uninstall_tool'),
     path(
         'reconpoint/update/',
-        RengineUpdateCheck.as_view(),
-        name='check_rengine_update'),
+        ReconpointeUpdateCheck.as_view(),
+        name='check_reconpointe_update'),
     path(
         'action/subdomain/delete/',
         DeleteSubdomain.as_view(),

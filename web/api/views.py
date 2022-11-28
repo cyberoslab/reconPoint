@@ -664,7 +664,7 @@ class ListInterestingKeywords(APIView):
 		return Response(keywords)
 
 
-class RengineUpdateCheck(APIView):
+class ReconpointeUpdateCheck(APIView):
 	def get(self, request):
 		req = self.request
 		github_api = \

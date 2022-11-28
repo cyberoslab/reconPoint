@@ -254,7 +254,7 @@ def tool_specific_settings(request):
     context['gf_patterns'] = sorted(gf_list.split('\n'))
     return render(request, 'scanEngine/settings/tool.html', context)
 
-def rengine_settings(request):
+def reconpointe_settings(request):
     context = {}
 
     total, used, _ = shutil.disk_usage("/")
@@ -266,7 +266,7 @@ def rengine_settings(request):
     context['consumed_percent'] = int(100 * float(used)/float(total))
 
     context['settings_nav_active'] = 'active'
-    context['rengine_settings_li'] = 'active'
+    context['reconpointe_settings_li'] = 'active'
     context['settings_ul_show'] = 'show'
 
     return render(request, 'scanEngine/settings/reconpoint.html', context)

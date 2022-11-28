@@ -115,7 +115,7 @@ class Migration(migrations.Migration):
                 ('company_address', models.CharField(blank=True, max_length=200, null=True)),
                 ('company_email', models.CharField(blank=True, max_length=100, null=True)),
                 ('company_website', models.CharField(blank=True, max_length=100, null=True)),
-                ('show_rengine_banner', models.BooleanField(default=True)),
+                ('show_reconpointe_banner', models.BooleanField(default=True)),
                 ('show_executive_summary', models.BooleanField(default=True)),
                 ('executive_summary_description', models.TextField(blank=True, null=True)),
                 ('show_footer', models.BooleanField(default=False)),

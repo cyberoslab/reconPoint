@@ -692,7 +692,7 @@ def create_report(request, id):
         data['company_address'] = report.company_address
         data['company_email'] = report.company_email
         data['company_website'] = report.company_website
-        data['show_rengine_banner'] = report.show_rengine_banner
+        data['show_reconpointe_banner'] = report.show_reconpointe_banner
         data['show_footer'] = report.show_footer
         data['footer_text'] = report.footer_text
         data['show_executive_summary'] = report.show_executive_summary

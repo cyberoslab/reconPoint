@@ -170,7 +170,7 @@
             </g>
           </svg>
           <span class="pro-user-name ms-1">
-            {{user.get_username}} <span class="badge bg-danger ms-1 me-1 rengine_update_available">1</span><i class="mdi mdi-chevron-down"></i>
+            {{user.get_username}} <span class="badge bg-danger ms-1 me-1 reconpointe_update_available">1</span><i class="mdi mdi-chevron-down"></i>
           </span>
         </a>
         <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
@@ -182,9 +182,9 @@
             <span>My Account</span>
           </a>
           <div class="dropdown-divider"></div>
-          <a href="javascript: check_rengine_update()" class="dropdown-item notify-item">
+          <a href="javascript: check_reconpointe_update()" class="dropdown-item notify-item">
             <i class="fe-refresh-cw"></i>
-            <span>Check Log4j Update <small class="text-danger rengine_update_available"></br>Update available!</small></span>
+            <span>Check Log4j Update <small class="text-danger reconpointe_update_available"></br>Update available!</small></span>
           </a>
           <div class="dropdown-divider"></div>
           <a href="{% url 'logout' %}" class="dropdown-item notify-item">
@@ -203,7 +203,6 @@
     <div class="logo-box">
       <a href="{% url 'dashboardIndex' %}" class="logo logo-dark text-center">
         <span class="logo-sm">
-<<<<<<< Updated upstream
           <h3 class="text-logo vertical-center">reconPoint<small>1.3.4</small></h3>
         </span>
         <span class="logo-lg">
@@ -217,14 +216,12 @@
         <span class="logo-lg">
           <h3 class="text-lg-logo vertical-center">reconPoint<small>1.3.4</small></h3>
         </span>
-=======
           <h3 class="text-logo vertical-center">reconPoint<small>beta</small></h3>
         </span>
         <span class="logo-lg">
           <h3 class="text-logo vertical-center">reconPoint<small>beta</small></h3>
         </span>
       </a>
->>>>>>> Stashed changes
       </a>
     </div>
     <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
@@ -278,7 +275,7 @@
               <a href="{% url 'tool_settings' %}" class="dropdown-item">Tool Settings</a>
               <a href="{% url 'tool_arsenal' %}" class="dropdown-item">Tools Arsenal</a>
               <a href="{% url 'report_settings' %}" class="dropdown-item">Report Settings</a>
-              <a href="{% url 'rengine_settings' %}" class="dropdown-item">Log4j Settings</a>
+              <a href="{% url 'reconpointe_settings' %}" class="dropdown-item">Log4j Settings</a>
               <a href="{% url 'hackerone_settings' %}" class="dropdown-item">Hackerone Settings</a>
               <a href="{% url 'notification_settings' %}" class="dropdown-item">Notification Settings</a>
             </div>

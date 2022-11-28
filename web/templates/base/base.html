@@ -94,10 +94,10 @@
         getScanStatusSidebar();
         // hide badge if update does not exists
         if (window.localStorage.getItem('update_available') && window.localStorage.getItem('update_available') === 'true') {
-          $('.rengine_update_available').show();
+          $('.reconpointe_update_available').show();
         }
         else{
-          $('.rengine_update_available').hide();
+          $('.reconpointe_update_available').hide();
         }
         // tippy for notification or scan acitivity
         tippy('.top-activity-counter', {
@@ -132,7 +132,7 @@
         });
       }
 
-      function check_rengine_update(){
+      function check_reconpointe_update(){
         if (window.localStorage.getItem('update_available') && window.localStorage.getItem('update_available') === 'true') {
           update_available();
         }
@@ -154,16 +154,16 @@
                 icon: 'error'
               });
               window.localStorage.setItem('update_available', false);
-              $('.rengine_update_available').hide();
+              $('.reconpointe_update_available').hide();
             }
             else if (response['update_available']){
               window.localStorage.setItem('update_available', true);
-              $('.rengine_update_available').show();
+              $('.reconpointe_update_available').show();
               update_available(response['latest_version'], response['changelog']);
             }
             else{
               window.localStorage.setItem('update_available', false);
-              $('.rengine_update_available').hide();
+              $('.reconpointe_update_available').hide();
               Swal.fire({
                 title: 'Update not available',
                 text: 'You are running the latest version of reconPoint!',
@@ -199,12 +199,12 @@
         .then(function (response) {
           if (response['update_available']){
             window.localStorage.setItem('update_available', true);
-            $('.rengine_update_available').show();
+            $('.reconpointe_update_available').show();
             update_available(response['latest_version'], response['changelog'])
           }
           else{
             window.localStorage.setItem('update_available', false);
-            $('.rengine_update_available').hide();
+            $('.reconpointe_update_available').hide();
           }
         });
       }
