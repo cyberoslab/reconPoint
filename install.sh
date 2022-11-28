@@ -26,7 +26,7 @@ echo "#########################################################################"
 
 echo " "
 tput setaf 4;
-echo "Installing reNgine and it's dependencies"
+echo "Installing reconPoint and it's dependencies"
 
 echo " "
 if [ "$EUID" -ne 0 ]
