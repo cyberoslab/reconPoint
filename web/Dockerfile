@@ -1,11 +1,12 @@
-# Base image
-FROM ubuntu:20.04
+FROM ubuntu:latest
 
+ENV GO111MODULE="on"
+ENV GOPROXY="https://goproxy.io,direct"
 # Labels and Credits
 LABEL \
-    name="reconpoint" \
-    author="Log4j <alerts@log4j.codes>" \
-    description="reconpoint is a automated pipeline of recon process, useful for information gathering during web application penetration testing."
+    name="Log4j" \
+    author="CyberosLab <cyberoslab@log4j.code>" \
+    description="reconPoint is a automated pipeline of recon process, useful for information gathering during web application penetration testing."
 
 # Environment Variables
 ENV DEBIAN_FRONTEND="noninteractive" \
@@ -38,14 +39,16 @@ RUN apt update -y && apt install -y  --no-install-recommends \
     libpango-1.0-0 \
     libpangoft2-1.0-0 \
     geoip-bin \
-    geoip-database
+    geoip-database  #install Download geckodriver
 
 
-# Download and install go 1.18
-RUN wget https://golang.org/dl/go1.18.2.linux-amd64.tar.gz
-RUN tar -xvf go1.18.2.linux-amd64.tar.gz
-RUN rm go1.18.2.linux-amd64.tar.gz
+
+# Download and install go 1.17
+RUN wget https://golang.org/dl/go1.19.2.linux-arm64.tar.gz
+RUN tar -xvf go1.19.2.linux-arm64.tar.gz
+RUN rm go1.19.2.linux-arm64.tar.gz
 RUN mv go /usr/local
+
 
 # Download geckodriver
 RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz

@@ -1,0 +1,79 @@
+<div id="wrapper">
+<div class="topnav">
+  <div class="container-fluid">
+    <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+      <div class="collapse navbar-collapse" id="topnav-menu-content">
+        <ul class="navbar-nav">
+          <li class="nav-item dropdown {{target_data_active}}">
+            <a class="nav-link arrow-none" href="{% url 'dashboardIndex' %}">
+              <i class="fe-home me-1"></i> Dashboard
+            </a>
+          </li>
+          <li class="nav-item dropdown {{target_data_active}}">
+            <a class="nav-link arrow-none" href="{% url 'list_target' %}">
+              <i class="fe-crosshair me-1"></i> Targets
+            </a>
+          </li>
+          <li class="nav-item dropdown {{scan_history_active}} {{scheduled_scan_active}}">
+            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-history" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fe-activity me-1"></i> Scan History
+              <div class="arrow-down"></div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="topnav-history">
+              <a href="{% url 'scan_history' %}" class="dropdown-item">Scan History</a>
+              <a href="{% url 'subscan_history' %}" class="dropdown-item">Sub Scan History</a>
+              <a href="{% url 'scheduled_scan_view' %}" class="dropdown-item">Scheduled Scan</a>
+              <div class="dropdown-divider"></div>
+              <a href="{% url 'all_subdomains' %}" class="dropdown-item">All Subdomains</a>
+              <a href="{% url 'all_endpoints' %}" class="dropdown-item">All Endpoints</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link arrow-none" href="{% url 'all_vulns' %}">
+              <i class="fe-alert-triangle me-1"></i> Vulnerabilities
+            </a>
+          </li>
+          <li class="nav-item dropdown {{recon_note_active}}">
+            <a class="nav-link arrow-none" href="{% url 'list_note' %}">
+              <i class="fe-check-square me-1"></i> Todo
+            </a>
+          </li>
+          <li class="nav-item dropdown {{organization_active}}">
+            <a class="nav-link arrow-none" href="{% url 'list_organization' %}">
+              <i class="fe-briefcase me-1"></i> Organization
+            </a>
+          </li>
+          <li class="nav-item dropdown {{scan_engine_nav_active}}">
+            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-scanengine" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fe-cpu me-1"></i> Scan Engine
+              <div class="arrow-down"></div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="topnav-scanengine">
+              <a href="{% url 'scan_engine_index' %}" class="dropdown-item">Scan Engines</a>
+              <a href="{% url 'wordlist_list' %}" class="dropdown-item">Wordlists</a>
+              <a href="{% url 'interesting_lookup' %}" class="dropdown-item">Interesting Lookup</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown {{settings_nav_active}}">
+            <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-settings" role="button"
+              data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fe-settings me-1"></i> Settings
+              <div class="arrow-down"></div>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="topnav-settings">
+              <a href="{% url 'proxy_settings' %}" class="dropdown-item">Proxies</a>
+              <a href="{% url 'tool_settings' %}" class="dropdown-item">Tool Settings</a>
+              <a href="{% url 'tool_arsenal' %}" class="dropdown-item">Tools Arsenal</a>
+              <a href="{% url 'report_settings' %}" class="dropdown-item">Report Settings</a>
+              <a href="{% url 'rengine_settings' %}" class="dropdown-item">Log4j Settings</a>
+              <a href="{% url 'hackerone_settings' %}" class="dropdown-item">Hackerone Settings</a>
+              <a href="{% url 'notification_settings' %}" class="dropdown-item">Notification Settings</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
